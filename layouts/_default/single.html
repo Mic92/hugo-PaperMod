@@ -54,6 +54,11 @@
   </header>
   {{- $isHidden := .Params.cover.hidden | default .Site.Params.cover.hiddenInSingle | default .Site.Params.cover.hidden}}
   {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
+
+  <p class="entry-cover">
+    Download as <a href="/ebooks/{{ .File.TranslationBaseName }}.epub">Epub</a> or <a href="/ebooks/{{ .File.TranslationBaseName }}.mobi">Mobi</a> for your E-Book reader.
+  </p>
+
   {{- if (.Param "ShowToc") }}
   <div class="toc">
     <details {{if (.Param "TocOpen") }} open{{ end }}>
